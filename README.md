@@ -1,32 +1,71 @@
 # ClauseDiff 安心對 🛡️
 
 > **貼得安心，對得放心。**  
-> **Privacy-first Contract & Policy Diff Tool. 100% Client-Side Processing. Zero Server Upload.**
+> **Privacy-First Contract & Policy Diff Tool | 100% Client-Side Processing | Zero Server Upload**
 
-`ClauseDiff` 是一個專為 Legal、HR 及管理層打造的輕量化合約與政策比對工具。透過純前端本地運算（Client-Side Processing），確保所有敏感文件絕不上傳至任何第三方伺服器，完全符合 PDPO / GDPR 個人資料私隱標準。
-
----
-
-## ✨ 核心亮點 (Key Features)
-
-* 🔒 **100% 本地運算 (Zero Server Upload)**：所有文字比對完全在您的瀏覽器記憶體內即時完成，無資料洩漏風險。
-* ⚖️ **條款與政策優化 (Clause-Optimized)**：專為合約條款（Clauses）與 HR 政策（Policies）設計，高亮顯示文字增刪與標點符號修訂。
-* ⚡ **即時異動比對 (Instant Diff)**：支援 Side-by-Side（雙欄）及 Inline（單欄）比對檢視。
-* 🚩 **合規風險提示 (Governance Overlay - Coming Soon)**：自動識別敏感條款變更（如競業條款、解約通知期、薪酬等）。
+[![GitHub Pages](https://img.shields.io/badge/Live_Demo-GitHub_Pages-brightgreen?style=flat-square&logo=github)](https://jackylawck.github.io/ClauseDiff/)
+[![License](https://img.shields.io/badge/License-MIT-blue.svg?style=flat-square)](LICENSE)
+[![Privacy](https://img.shields.io/badge/Data_Privacy-100%25_Client--Side-emerald?style=flat-square)](https://jackylawck.github.io/ClauseDiff/)
 
 ---
 
-## 🛠️ 技術架構 (Tech Stack)
+### 🌐 About / 專案簡介
 
-* **Frontend:** HTML5 / TailwindCSS / Vanilla JS (or React)
-* **Diff Engine:** `diff` (npm)
-* **Hosting:** GitHub Pages (Serverless)
+**ClauseDiff 安心對** is a privacy-first text comparison web application designed specifically for **Legal, HR, and Enterprise Management**. Powered entirely by Client-Side processing, your sensitive contracts, emails, and internal policy documents are compared directly within your browser’s memory—never uploaded to any server or cloud database.
+
+**ClauseDiff 安心對** 是一款專為 **Legal、HR 及企業管理層** 打造的輕量化私隱比對工具。透過純前端本地運算（Client-Side Processing），所有敏感合約、Email 及政策條文完全在您的瀏覽器記憶體內進行比對，絕不上傳至任何第三方伺服器，徹底杜絕商業機密與個人資料外洩風險。
 
 ---
 
-## 🔒 數據私隱承諾 (Privacy Guarantee)
+## ✨ Key Features / 核心亮點
 
-本工具為 **100% Client-Side Web Application**。在您使用本工具進行文字或文件比對時：
-1. 資料**不會**傳送至任何後端 API 伺服器。
-2. 資料**不會**被儲存在任何資料庫。
-3. 資料**不會**用於任何 AI 模型訓練。
+* 🔒 **100% Client-Side Processing (Zero Server Upload) / 100% 本地純前端運算**
+  * All text comparisons run locally in your browser (RAM). Zero API calls, zero database persistence.  
+    所有文字比對完全在您的本機瀏覽器（RAM）內即時完成，零 API 呼叫、零資料庫儲存。
+* ⚖️ **Clause & Policy Optimized / 條款與政策專屬優化**
+  * Designed for legal clauses and HR policies with word-level highlightings for insertions, deletions, and punctuation edits.  
+    專為合約條款與 HR 政策設計，高亮顯示文字增刪、標點符號修訂與格式異動。
+* 🌐 **Bilingual Interface (i18n) / 一鍵切換中英文**
+  * Seamlessly switch between Traditional Chinese and English with a single click.  
+    內建繁體中文與英文介面一鍵切換。
+* ⚡ **Instant Word-Level Diff / 極速零延遲比對**
+  * High-performance diff algorithm to locate subtle contract changes in milliseconds.  
+    秒級定位合約與條文的細微變更。
+
+---
+
+## 📋 Enterprise Compliance & ISO Alignment / 企業合規與資安對齊
+
+Designed with strict **Privacy by Design & Default** principles, ClauseDiff aligns with global cybersecurity and data privacy standards:
+
+本專案在架構設計上落實 **Privacy by Design & Default** 原則，對齊以下國際資安與私隱管理標準：
+
+| Standard / 國際標準 | Architectural Assurance / 合規架構保障 |
+| :--- | :--- |
+| **ISO/IEC 27001 (ISMS)** | **Zero Storage & Zero Transit**: Prevents data leakage with zero data transit or persistence.<br>無數據傳輸與持久化儲存，徹底封堵 Data Leakage 風險。 |
+| **ISO/IEC 27701 (PIMS)** | **Data Minimization**: Zero PII (Personally Identifiable Information) collection, strictly adhering to GDPR & PDPO.<br>完全不收集 PII 個人資料，符合 GDPR 及香港 PDPO 私隱條例。 |
+| **ISO/IEC 42001 (AIMS)** | **Governance Safe**: Content is processed locally and never ingested or used for third-party AI model training.<br>輸入內容絕不上傳雲端，保證絕不被用於第三方 AI 模型訓練。 |
+
+---
+
+## 🛠️ Tech Stack / 技術架構
+
+* **Frontend Engine:** HTML5 / Vanilla JavaScript (ES6+)
+* **Styling:** Tailwind CSS (via CDN)
+* **Diff Engine:** [jsdiff](https://github.com/kpdecker/jsdiff)
+* **Deployment:** GitHub Pages (Serverless)
+
+---
+
+## 🚀 Live Demo / 快速體驗
+
+Experience the live app immediately on GitHub Pages without installing anything:  
+無需安裝任何套件，造訪已部署的線上版本：
+
+👉 **[Launch ClauseDiff 安心對](https://jackylawck.github.io/ClauseDiff/)**
+
+---
+
+## 📄 License / 授權條款
+
+Distributed under the [MIT License](LICENSE).
