@@ -14,7 +14,7 @@ self.addEventListener('install', (e) => {
     self.skipWaiting();
 });
 
-// 清理舊版本的快取 (當版本號由 v1 改成 v2 時會自動觸發)
+// 清理舊版本快取
 self.addEventListener('activate', (e) => {
     e.waitUntil(
         caches.keys().then((keys) => {
@@ -30,7 +30,7 @@ self.addEventListener('activate', (e) => {
     self.clients.claim();
 });
 
-// 攔截請求：優先讀取本機快取，無快取才連網
+// 攔截請求：優先讀取本機快取，實現 100% 離線/斷網運算
 self.addEventListener('fetch', (e) => {
     e.respondWith(
         caches.match(e.request).then((response) => {
