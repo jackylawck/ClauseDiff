@@ -98,10 +98,32 @@
             </div>
         </div>
 
+        <!-- ISO & Enterprise Compliance Audit Statement Card -->
+        <div class="bg-slate-100 border border-slate-200 rounded-xl p-5 space-y-3 text-xs text-slate-600 shadow-inner">
+            <h3 class="font-bold text-slate-800 flex items-center space-x-1.5 text-sm">
+                <span>📋</span>
+                <span id="iso-title">企業合規與資安聲明 (Enterprise Compliance & ISO Alignment)</span>
+            </h3>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-3 pt-1">
+                <div class="bg-white p-3 rounded-lg border border-slate-200 space-y-1">
+                    <div class="font-semibold text-slate-800" id="iso-27001-title">🔒 ISO/IEC 27001 (ISMS)</div>
+                    <p class="text-slate-500 leading-normal" id="iso-27001-desc">Zero Storage & Zero Transit 架構，無數據傳輸與儲存，徹底杜絕資料外洩風險。</p>
+                </div>
+                <div class="bg-white p-3 rounded-lg border border-slate-200 space-y-1">
+                    <div class="font-semibold text-slate-800" id="iso-27701-title">🛡️ ISO/IEC 27701 & PDPO/GDPR</div>
+                    <p class="text-slate-500 leading-normal" id="iso-27701-desc">貫徹 Privacy by Design & Default，完全不收集 PII 個人資料，符合私隱合規標準。</p>
+                </div>
+                <div class="bg-white p-3 rounded-lg border border-slate-200 space-y-1">
+                    <div class="font-semibold text-slate-800" id="iso-42001-title">🤖 ISO/IEC 42001 Safe</div>
+                    <p class="text-slate-500 leading-normal" id="iso-42001-desc">無 API 外連，輸入內容絕不被用於第三方 AI 模型訓練，維護數據治理誠信。</p>
+                </div>
+            </div>
+        </div>
+
     </main>
 
     <!-- Footer -->
-    <footer class="bg-slate-100 border-t border-slate-200 py-6 mt-12 text-center text-xs text-slate-500 space-y-2">
+    <footer class="bg-slate-100 border-t border-slate-200 py-6 mt-6 text-center text-xs text-slate-500 space-y-2">
         <p>ClauseDiff 安心對 &copy; 2026. 100% Client-Side Web Application.</p>
         <p class="text-slate-400" id="footer-guarantee">本工具所有運算均在您的本機瀏覽器進行，符合 GDPR 及 PDPO 私隱合規標準。</p>
     </footer>
@@ -127,6 +149,13 @@
                 labelResultTitle: "📊 條文比對結果",
                 legendAdded: "新增內容",
                 legendRemoved: "刪除內容",
+                isoTitle: "企業合規與資安聲明 (Enterprise Compliance & ISO Alignment)",
+                iso27001Title: "🔒 ISO/IEC 27001 (ISMS)",
+                iso27001Desc: "Zero Storage & Zero Transit 架構，無數據傳輸與儲存，徹底杜絕資料外洩風險。",
+                iso27701Title: "🛡️ ISO/IEC 27701 & PDPO/GDPR",
+                iso27701Desc: "貫徹 Privacy by Design & Default，完全不收集 PII 個人資料，符合私隱合規標準。",
+                iso42001Title: "🤖 ISO/IEC 42001 Safe",
+                iso42001Desc: "無 API 外連，輸入內容絕不被用於第三方 AI 模型訓練，維護數據治理誠信。",
                 footerGuarantee: "本工具所有運算均在您的本機瀏覽器進行，符合 GDPR 及 PDPO 私隱合規標準。",
                 langBtnText: "English",
                 alertEmpty: "請先輸入或貼上要比對的條文內容！"
@@ -147,6 +176,13 @@
                 labelResultTitle: "📊 Comparison Output",
                 legendAdded: "Added Text",
                 legendRemoved: "Removed Text",
+                isoTitle: "Enterprise Compliance & ISO Alignment Statement",
+                iso27001Title: "🔒 ISO/IEC 27001 (ISMS)",
+                iso27001Desc: "Zero Storage & Zero Transit architecture. Prevents data leakage with zero data persistence.",
+                iso27701Title: "🛡️ ISO/IEC 27701 & PDPO/GDPR",
+                iso27701Desc: "Enforces Privacy by Design & Default. Zero PII collection for full compliance.",
+                iso42001Title: "🤖 ISO/IEC 42001 Safe",
+                iso42001Desc: "No third-party API calls. Content is never ingested or used for AI model training.",
                 footerGuarantee: "100% Client-Side Web App. Compliant with GDPR & PDPO privacy standards.",
                 langBtnText: "繁體中文",
                 alertEmpty: "Please enter or paste text to compare first!"
@@ -171,6 +207,16 @@
             document.getElementById('label-result-title').innerText = t.labelResultTitle;
             document.getElementById('legend-added').innerText = t.legendAdded;
             document.getElementById('legend-removed').innerText = t.legendRemoved;
+            
+            // ISO Section Translation
+            document.getElementById('iso-title').innerText = t.isoTitle;
+            document.getElementById('iso-27001-title').innerText = t.iso27001Title;
+            document.getElementById('iso-27001-desc').innerText = t.iso27001Desc;
+            document.getElementById('iso-27701-title').innerText = t.iso27701Title;
+            document.getElementById('iso-27701-desc').innerText = t.iso27701Desc;
+            document.getElementById('iso-42001-title').innerText = t.iso42001Title;
+            document.getElementById('iso-42001-desc').innerText = t.iso42001Desc;
+
             document.getElementById('footer-guarantee').innerText = t.footerGuarantee;
             document.getElementById('lang-btn-text').innerText = t.langBtnText;
         }
