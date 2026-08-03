@@ -20,11 +20,18 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
             <div class="flex items-center space-x-3">
                 <span class="text-2xl">🛡️</span>
-                <span class="font-bold text-xl tracking-tight text-white">ClauseDiff <span class="text-sky-400 font-normal">安心對</span></span>
+                <span class="font-bold text-xl tracking-tight text-white">ClauseDiff <span class="text-sky-400 font-normal" id="header-cname">安心對</span></span>
             </div>
-            <div class="flex items-center space-x-2 bg-emerald-950 border border-emerald-500/40 text-emerald-300 text-xs px-3 py-1.5 rounded-full shadow-inner">
-                <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-                <span>🔒 100% 本地純前端運算 (Zero Server Upload)</span>
+            
+            <div class="flex items-center space-x-3">
+                <div class="hidden sm:flex items-center space-x-2 bg-emerald-950 border border-emerald-500/40 text-emerald-300 text-xs px-3 py-1.5 rounded-full shadow-inner">
+                    <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                    <span id="badge-privacy">🔒 100% 本地純前端運算 (Zero Server Upload)</span>
+                </div>
+                <!-- Language Toggle Button -->
+                <button onclick="toggleLanguage()" class="bg-slate-800 hover:bg-slate-700 border border-slate-700 text-xs font-semibold px-3 py-1.5 rounded-lg transition text-slate-200">
+                    🌐 <span id="lang-btn-text">English</span>
+                </button>
             </div>
         </div>
     </header>
@@ -34,8 +41,8 @@
         
         <!-- Slogan & Subtitle -->
         <div class="text-center space-y-2 py-2">
-            <h1 class="text-2xl sm:text-3xl font-extrabold text-slate-900">貼得安心，對得放心。</h1>
-            <p class="text-slate-600 text-sm sm:text-base max-w-2xl mx-auto">
+            <h1 class="text-2xl sm:text-3xl font-extrabold text-slate-900" id="main-slogan">貼得安心，對得放心。</h1>
+            <p class="text-slate-600 text-sm sm:text-base max-w-2xl mx-auto" id="main-subtitle">
                 專為 Legal & HR 打造的私隱比對工具。所有數據僅在您的瀏覽器記憶體內運算，絕不上傳雲端。
             </p>
         </div>
@@ -45,19 +52,19 @@
             <!-- Left: Original Version -->
             <div class="flex flex-col space-y-2 bg-white p-4 rounded-xl border border-slate-200 shadow-sm">
                 <label for="text-old" class="font-semibold text-slate-700 flex justify-between items-center text-sm">
-                    <span>📄 原版本條文 / 舊稿 (Original)</span>
-                    <button onclick="clearText('text-old')" class="text-xs text-slate-400 hover:text-rose-600 transition">清除</button>
+                    <span id="label-original">📄 原版本條文 / 舊稿</span>
+                    <button onclick="clearText('text-old')" class="text-xs text-slate-400 hover:text-rose-600 transition" id="btn-clear-old">清除</button>
                 </label>
-                <textarea id="text-old" class="w-full h-64 p-3 text-sm bg-slate-50 border border-slate-200 rounded-lg focus:ring-2 focus:ring-sky-500 focus:outline-none resize-y font-mono" placeholder="請在此貼上舊版合約、Email 或政策條文..."></textarea>
+                <textarea id="text-old" class="w-full h-64 p-3 text-sm bg-slate-50 border border-slate-200 rounded-lg focus:ring-2 focus:ring-sky-500 focus:outline-none resize-y font-mono"></textarea>
             </div>
 
             <!-- Right: Modified Version -->
             <div class="flex flex-col space-y-2 bg-white p-4 rounded-xl border border-slate-200 shadow-sm">
                 <label for="text-new" class="font-semibold text-slate-700 flex justify-between items-center text-sm">
-                    <span>📝 修訂後條文 / 新稿 (Modified)</span>
-                    <button onclick="clearText('text-new')" class="text-xs text-slate-400 hover:text-rose-600 transition">清除</button>
+                    <span id="label-modified">📝 修訂後條文 / 新稿</span>
+                    <button onclick="clearText('text-new')" class="text-xs text-slate-400 hover:text-rose-600 transition" id="btn-clear-new">清除</button>
                 </label>
-                <textarea id="text-new" class="w-full h-64 p-3 text-sm bg-slate-50 border border-slate-200 rounded-lg focus:ring-2 focus:ring-sky-500 focus:outline-none resize-y font-mono" placeholder="請在此貼上新版合約、Email 或政策條文..."></textarea>
+                <textarea id="text-new" class="w-full h-64 p-3 text-sm bg-slate-50 border border-slate-200 rounded-lg focus:ring-2 focus:ring-sky-500 focus:outline-none resize-y font-mono"></textarea>
             </div>
         </div>
 
@@ -66,11 +73,11 @@
             <div class="flex items-center space-x-4 text-xs text-slate-500">
                 <label class="flex items-center space-x-1 cursor-pointer">
                     <input type="checkbox" id="ignore-whitespace" class="rounded text-sky-600 focus:ring-sky-500" checked>
-                    <span>忽略多餘空格與換行</span>
+                    <span id="label-ignore-whitespace">忽略多餘空格與換行</span>
                 </label>
             </div>
             <button onclick="runDiff()" class="w-full sm:w-auto px-8 py-2.5 bg-sky-600 hover:bg-sky-700 text-white font-semibold rounded-lg shadow-sm transition-all focus:ring-2 focus:ring-sky-500 focus:ring-offset-1 flex items-center justify-center space-x-2">
-                <span>🔍 即時比對變更</span>
+                <span id="btn-compare">🔍 即時比對變更</span>
             </button>
         </div>
 
@@ -78,17 +85,16 @@
         <div id="result-container" class="hidden bg-white p-6 rounded-xl border border-slate-200 shadow-sm space-y-4">
             <div class="flex items-center justify-between border-b pb-3 border-slate-100">
                 <h2 class="font-bold text-slate-800 text-base flex items-center space-x-2">
-                    <span>📊 條文比對結果 (Diff Output)</span>
+                    <span id="label-result-title">📊 條文比對結果</span>
                 </h2>
                 <div class="text-xs space-x-3">
-                    <span class="inline-flex items-center"><span class="w-2.5 h-2.5 bg-emerald-200 border border-emerald-500 rounded-sm mr-1"></span> 新增內容</span>
-                    <span class="inline-flex items-center"><span class="w-2.5 h-2.5 bg-rose-200 border border-rose-500 rounded-sm mr-1"></span> 刪除內容</span>
+                    <span class="inline-flex items-center"><span class="w-2.5 h-2.5 bg-emerald-200 border border-emerald-500 rounded-sm mr-1"></span> <span id="legend-added">新增內容</span></span>
+                    <span class="inline-flex items-center"><span class="w-2.5 h-2.5 bg-rose-200 border border-rose-500 rounded-sm mr-1"></span> <span id="legend-removed">刪除內容</span></span>
                 </div>
             </div>
             
             <!-- Rendered Diff Output -->
             <div id="diff-output" class="p-4 bg-slate-50 rounded-lg border border-slate-200 text-sm leading-relaxed whitespace-pre-wrap font-mono min-h-[120px]">
-                <!-- Results will be injected here via JavaScript -->
             </div>
         </div>
 
@@ -97,22 +103,93 @@
     <!-- Footer -->
     <footer class="bg-slate-100 border-t border-slate-200 py-6 mt-12 text-center text-xs text-slate-500 space-y-2">
         <p>ClauseDiff 安心對 &copy; 2026. 100% Client-Side Web Application.</p>
-        <p class="text-slate-400">本工具所有運算均在您的本機瀏覽器進行，符合 GDPR 及 PDPO 私隱合規標準。</p>
+        <p class="text-slate-400" id="footer-guarantee">本工具所有運算均在您的本機瀏覽器進行，符合 GDPR 及 PDPO 私隱合規標準。</p>
     </footer>
 
-    <!-- Core App Logic -->
+    <!-- Core App Logic with i18n -->
     <script>
+        let currentLang = 'zh';
+
+        const translations = {
+            zh: {
+                headerCname: "安心對",
+                badgePrivacy: "🔒 100% 本地純前端運算 (Zero Server Upload)",
+                mainSlogan: "貼得安心，對得放心。",
+                mainSubtitle: "專為 Legal & HR 打造的私隱比對工具。所有數據僅在您的瀏覽器記憶體內運算，絕不上傳雲端。",
+                labelOriginal: "📄 原版本條文 / 舊稿",
+                labelModified: "📝 修訂後條文 / 新稿",
+                placeholderOld: "請在此貼上舊版合約、Email 或政策條文...",
+                placeholderNew: "請在此貼上新版合約、Email 或政策條文...",
+                btnClearOld: "清除",
+                btnClearNew: "清除",
+                labelIgnoreWhitespace: "忽略多餘空格與換行",
+                btnCompare: "🔍 即時比對變更",
+                labelResultTitle: "📊 條文比對結果",
+                legendAdded: "新增內容",
+                legendRemoved: "刪除內容",
+                footerGuarantee: "本工具所有運算均在您的本機瀏覽器進行，符合 GDPR 及 PDPO 私隱合規標準。",
+                langBtnText: "English",
+                alertEmpty: "請先輸入或貼上要比對的條文內容！"
+            },
+            en: {
+                headerCname: "ClauseDiff",
+                badgePrivacy: "🔒 100% Client-Side Processing (Zero Server Upload)",
+                mainSlogan: "Compare Contracts with Peace of Mind.",
+                mainSubtitle: "Privacy-first Diff Tool for Legal & HR. All processing runs entirely in your browser memory—never uploaded to the cloud.",
+                labelOriginal: "📄 Original Version",
+                labelModified: "📝 Modified Version",
+                placeholderOld: "Paste original contract, email, or policy text here...",
+                placeholderNew: "Paste modified contract, email, or policy text here...",
+                btnClearOld: "Clear",
+                btnClearNew: "Clear",
+                labelIgnoreWhitespace: "Ignore extra whitespace & line breaks",
+                btnCompare: "🔍 Compare Changes",
+                labelResultTitle: "📊 Comparison Output",
+                legendAdded: "Added Text",
+                legendRemoved: "Removed Text",
+                footerGuarantee: "100% Client-Side Web App. Compliant with GDPR & PDPO privacy standards.",
+                langBtnText: "繁體中文",
+                alertEmpty: "Please enter or paste text to compare first!"
+            }
+        };
+
+        function updateLanguage() {
+            const t = translations[currentLang];
+            
+            document.getElementById('header-cname').innerText = currentLang === 'zh' ? t.headerCname : '';
+            document.getElementById('badge-privacy').innerText = t.badgePrivacy;
+            document.getElementById('main-slogan').innerText = t.mainSlogan;
+            document.getElementById('main-subtitle').innerText = t.mainSubtitle;
+            document.getElementById('label-original').innerText = t.labelOriginal;
+            document.getElementById('label-modified').innerText = t.labelModified;
+            document.getElementById('text-old').placeholder = t.placeholderOld;
+            document.getElementById('text-new').placeholder = t.placeholderNew;
+            document.getElementById('btn-clear-old').innerText = t.btnClearOld;
+            document.getElementById('btn-clear-new').innerText = t.btnClearNew;
+            document.getElementById('label-ignore-whitespace').innerText = t.labelIgnoreWhitespace;
+            document.getElementById('btn-compare').innerText = t.btnCompare;
+            document.getElementById('label-result-title').innerText = t.labelResultTitle;
+            document.getElementById('legend-added').innerText = t.legendAdded;
+            document.getElementById('legend-removed').innerText = t.legendRemoved;
+            document.getElementById('footer-guarantee').innerText = t.footerGuarantee;
+            document.getElementById('lang-btn-text').innerText = t.langBtnText;
+        }
+
+        function toggleLanguage() {
+            currentLang = currentLang === 'zh' ? 'en' : 'zh';
+            updateLanguage();
+        }
+
         function runDiff() {
             const oldText = document.getElementById('text-old').value;
             const newText = document.getElementById('text-new').value;
             const ignoreWhitespace = document.getElementById('ignore-whitespace').checked;
 
             if (!oldText && !newText) {
-                alert('請先輸入或貼上要比對的條文內容！');
+                alert(translations[currentLang].alertEmpty);
                 return;
             }
 
-            // Execute word-level diff using jsdiff
             let diff;
             if (ignoreWhitespace) {
                 diff = Diff.diffWordsWithSpace(oldText, newText);
@@ -141,7 +218,6 @@
 
             outputContainer.appendChild(fragment);
 
-            // Show result area smoothly
             const resultContainer = document.getElementById('result-container');
             resultContainer.classList.remove('hidden');
             resultContainer.scrollIntoView({ behavior: 'smooth' });
@@ -150,6 +226,9 @@
         function clearText(id) {
             document.getElementById(id).value = '';
         }
+
+        // Initialize default language view
+        updateLanguage();
     </script>
 </body>
 </html>
