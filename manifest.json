@@ -1,7 +1,7 @@
 {
   "name": "ClauseDiff 安心對",
   "short_name": "ClauseDiff",
-  "description": "專為 Legal & HR 打造的純前端私隱條文比對工具",
+  "description": "專為敏感合約與機密文件打造的純前端私隱比對工具",
   "start_url": "./index.html",
   "display": "standalone",
   "background_color": "#0f172a",
