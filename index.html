@@ -6,8 +6,8 @@
     <!-- Google Search Console 驗證標籤 -->
     <meta name="google-site-verification" content="JZ5UohX-CcP_fQV0_DI9VadkKY4ZoTTkUifL88-fIcY" />
     
-    <!-- PWA Manifest, Favicon & App Icons -->
-    <link rel="manifest" href="./manifest.json">
+    <!-- PWA Dynamic Manifest, Favicon & App Icons -->
+    <link id="manifest-link" rel="manifest" href="./manifest-zh.json">
     <link rel="apple-touch-icon" href="./ClauseDifficon-192.png">
     <link rel="icon" type="image/png" href="./ClauseDifficon-192.png">
 
@@ -237,6 +237,12 @@
 
             document.getElementById('footer-guarantee').innerText = t.footerGuarantee;
             document.getElementById('lang-btn-text').innerText = t.langBtnText;
+
+            // 動態切換 PWA Manifest
+            const manifestLink = document.getElementById('manifest-link');
+            if (manifestLink) {
+                manifestLink.href = currentLang === 'zh' ? './manifest-zh.json' : './manifest-en.json';
+            }
         }
 
         function toggleLanguage() {
