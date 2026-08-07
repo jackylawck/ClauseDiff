@@ -12,9 +12,9 @@
 
 ### 🌐 About / 專案簡介
 
-**ClauseDiff 安心對** is a privacy-first text comparison web application designed specifically for **Legal, HR, and Enterprise Management**. Powered entirely by Client-Side processing, your sensitive contracts, emails, and internal policy documents are compared directly within your browser’s memory—never uploaded to any server or cloud database.
+**ClauseDiff 安心對** is a privacy-first text comparison web application designed specifically for **Confidential Contracts, Policies, and Enterprise Documents**. Powered entirely by Client-Side processing, your sensitive contracts, emails, and internal policy documents are compared directly within your browser’s memory—never uploaded to any server or cloud database.
 
-**ClauseDiff 安心對** 是一款專為 **Legal、HR 及企業管理層** 打造的輕量化私隱比對工具。透過純前端本地運算（Client-Side Processing），所有敏感合約、Email 及政策條文完全在您的瀏覽器記憶體內進行比對，絕不上傳至任何第三方伺服器，徹底杜絕商業機密與個人資料外洩風險。
+**ClauseDiff 安心對** 是一款專為 **敏感合約、機密文件與企業政策** 打造的輕量化私隱比對工具。透過純前端本地運算（Client-Side Processing），所有敏感合約、Email 及政策條文完全在您的瀏覽器記憶體內進行比對，絕不上傳至任何第三方伺服器，徹底杜絕商業機密與個人資料外洩風險。
 
 ---
 
@@ -27,8 +27,8 @@
   * Service Worker cache architecture enables users to disconnect Wi-Fi or toggle Flight Mode for ultimate air-gapped security.  
     採用 PWA 快取架構。使用者可直接斷網或開啟飛航模式進行條文比對，達到最高級別的隔離審查（Air-Gapped Privacy）。
 * ⚖️ **Clause & Policy Optimized / 條款與政策專屬優化**
-  * Designed for legal clauses and HR policies with word-level highlightings for insertions, deletions, and punctuation edits.  
-    專為合約條款與 HR 政策設計，高亮顯示文字增刪、標點符號修訂與格式異動。
+  * Designed for legal clauses, corporate policies, and sensitive emails with word-level highlightings for insertions, deletions, and punctuation edits.  
+    專為合約條款、企業政策與敏感信件設計，高亮顯示文字增刪、標點符號修訂與格式異動。
 * 🌐 **Bilingual Interface (i18n) / 一鍵切換中英文**
   * Seamlessly switch between Traditional Chinese and English with a single click.  
     內建繁體中文與英文介面一鍵切換。
