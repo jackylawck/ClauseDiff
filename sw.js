@@ -1,16 +1,14 @@
-const CACHE_NAME = 'clausediff-v1';
+const CACHE_NAME = 'clausediff-v2';
 const ASSETS = [
     './',
     './index.html',
     './manifest-zh.json',
     './manifest-en.json',
     './ClauseDifficon-192.png',
-    './ClauseDifficon-512.png',
-    'https://cdn.tailwindcss.com',
-    'https://cdnjs.cloudflare.com/ajax/libs/jsdiff/5.1.0/diff.min.js'
+    './ClauseDifficon-512.png'
 ];
 
-// 安裝 Service Worker 並快取所有必要資源 (包含 CDN 函式庫)
+// 安裝 Service Worker 並快取本機純靜態資源 (零外部 CDN 依賴)
 self.addEventListener('install', (e) => {
     e.waitUntil(
         caches.open(CACHE_NAME).then((cache) => {
@@ -20,7 +18,7 @@ self.addEventListener('install', (e) => {
     self.skipWaiting();
 });
 
-// 清理舊版本快取
+// 清理舊版本快取 (自動清除 v1 舊快取)
 self.addEventListener('activate', (e) => {
     e.waitUntil(
         caches.keys().then((keys) => {
@@ -36,7 +34,7 @@ self.addEventListener('activate', (e) => {
     self.clients.claim();
 });
 
-// 攔截請求：優先讀取本機快取，實現 100% 離線/斷網運算 (Air-Gapped Ready)
+// 攔截請求：優先讀取本機快取 (100% 離線 / Air-Gapped Ready)
 self.addEventListener('fetch', (e) => {
     e.respondWith(
         caches.match(e.request).then((response) => {
